@@ -1,0 +1,14 @@
+tomato_30=(80/5)*(30/100)*1000*10
+tomato_70=(80/5)*(70/100)*1000*12
+tomato=(tomato_30+tomato_70)*7
+print(tomato)
+potato=(80/5)*1000*10*20
+print(potato)
+cabbage=(80/5)*1000*14*24
+print(cabbage)
+sunflower=(80/5)*1000*0.7*200
+print(sunflower)
+sugarcane=(80/5)*45*4000
+print(sugarcane)
+total_cost=tomato+potato+sugarcane+sunflower+cabbage
+print(total_cost)
