@@ -12,3 +12,4 @@ sugarcane=(80/5)*45*4000
 print(sugarcane)
 total_cost=tomato+potato+sugarcane+sunflower+cabbage
 print(total_cost)
+print("hi")
