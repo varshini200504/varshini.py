@@ -26,7 +26,7 @@ def create_table():
 
 def create_db():
     connection = connect_db()
-    query = "create table IF NOT EXISTS persons(id int primary key, name varchar(32) not null, gender char check(gender in('m','M', 'f','F')), location varchar(32), dob datetime);"
+    query = "create table IF NOT EXISTS persons(id int primary key auto_increment, name varchar(32) not null, gender char check(gender in('m','M', 'f','F')), location varchar(32), dob datetime);"
     cursor = connection.cursor()
     cursor.execute(query)
     cursor.close()
