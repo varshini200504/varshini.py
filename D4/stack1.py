@@ -1,10 +1,11 @@
+import sys
 class Stack:
     def __init__(self,size=5):
         self.stk=[]
         self.size=size
         print('empty stack is created')
     def push(self):
-        if len(self.stk)==size:
+        if len(self.stk)==self.size:
             print("stack overflow")
         else:
             element=input("enter the element to b pushed:")
@@ -22,8 +23,6 @@ class Stack:
         else:
             print('the stack is:',self.stk)
 class Menu:
-    def __init__(self,stack):
-        pass
     def get_menu(self,stack):
         menu={
             1:stack.push,
@@ -40,7 +39,8 @@ class Menu:
         stack=Stack()
         while True:
             choice=int(input("1.push 2.pop 3.display 4.exit your choice:"))
-            menu=self.ger_menu(stack)
+            menu=self.get_menu(stack)
             menu.get(choice,self.invalid_choice)()
 menu=Menu()
-menu.run_menu(stack)
+menu.run_menu()
+#do stack end,queue front and end
