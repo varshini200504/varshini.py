@@ -1,12 +1,14 @@
 def bubble_sort(arr):
-    for i in range(len(arr)-1):
-        sorted=True
-        for j in range(len(arr)-i-1):
-            if(arr[j]>arr[j+1]):
-                arr[j+1],arr[j]=arr[j],arr[j+1]
-                sorted=False
-        if sorted:
-            return arr
-        
-arr=[2,1,4,9]
-print(bubble_sort(arr))
+    size=len(arr)
+    for i in range(size-1):
+        swapped=False
+        for j in range(size-1-i):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+                swapped=True
+        if swapped==False:
+            break
+elements=[1,2,4]
+bubble_sort(elements)
+print(elements)
+
