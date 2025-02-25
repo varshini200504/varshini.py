@@ -10,7 +10,9 @@ data = {
     'price_change': [5, 10, -5, 0, 5, -2, 3, 1, 0, 5, -3, 2, 4, -1, 0, 5, -4, 2, 3, 1],
     'sales_volume': [20, 15, 25, 10, 18, 12, 17, 14, 19, 22, 13, 11, 16, 21, 20, 9, 24, 19, 15, 18],
     'visit_frequency': [5, 4, 6, 3, 5, 7, 4, 3, 6, 5, 8, 3, 5, 7, 6, 4, 8, 6, 5, 4],
-    'customer_feedback_score': [4.5, 4.0, 5.0, 3.5, 4.8, 4.2, 4.1, 4.3, 4.4, 4.7, 4.9, 3.8, 4.1, 4.6, 4.5, 3.9, 5.0, 4.4, 4.3, 4.2]
+    'customer_feedback_score': [4.5, 4.0, 5.0, 3.5, 4.8, 4.2, 4.1, 4.3, 4.4, 4.7, 4.9, 3.8, 4.1, 4.6, 4.5, 3.9, 5.0, 4.4, 4.3, 4.2],
+    'social_media_engagement': [50, 40, 70, 20, 60, 55, 30, 45, 50, 65, 75, 25, 35, 60, 55, 30, 80, 50, 40, 60],
+    'online_reviews': [4.2, 4.0, 4.8, 3.5, 4.6, 4.3, 4.1, 4.5, 4.4, 4.7, 4.9, 3.8, 4.0, 4.6, 4.5, 3.9, 5.0, 4.4, 4.3, 4.2]
 }
 
 df = pd.DataFrame(data)
@@ -68,6 +70,17 @@ def detailed_customer_loyalty_analysis(df):
     plt.ylabel('Overall Loyalty Score')
     plt.show()
 
+# Digital Presence Analysis
+def analyze_digital_presence(df):
+    print("\nDigital Presence Analysis:")
+    print(df[['customer_id', 'social_media_engagement', 'online_reviews', 'sales_volume']])
+    plt.figure(figsize=(12, 6))
+    sns.scatterplot(x='social_media_engagement', y='sales_volume', data=df, hue='online_reviews', palette='viridis', s=100)
+    plt.title('Impact of Social Media and Online Reviews on Sales')
+    plt.xlabel('Social Media Engagement')
+    plt.ylabel('Sales Volume')
+    plt.show()
+
 # Analyze Customer Loyalty
 analyze_customer_loyalty(df)
 
@@ -79,3 +92,6 @@ analyze_price_sensitivity(df)
 
 # Detailed Customer Loyalty Analysis
 detailed_customer_loyalty_analysis(df)
+
+# Analyze Digital Presence
+analyze_digital_presence(df)
